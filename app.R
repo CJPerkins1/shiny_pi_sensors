@@ -283,7 +283,7 @@ ui <- fillPage(
       # Lets the user choose the sensor to display (lab)
       selectInput(
         "sensor", "Sensor",
-        c("Forbes East", "Forbes West", "Forbes Cedar", "Marley Kelsey", "Marley Cedar", "Microscope")
+        c("Forbes East", "Forbes West", "Forbes Cedar", "Marley Kelsey", "Marley Cedar", "Microscope", "Freezer")
       ),
       # # Lets the user choose the sensor to display (home)
       # selectInput("sensor", "Sensor",
@@ -350,6 +350,9 @@ server <- function(input, output, session) {
       }
       else if (input$sensor == "Microscope") {
         dataset <- import_dataset("1nZ3P_XlvcYG5rXRhdAJD5oZPYAdvs0JfCP6hmyc76yQ")
+      }
+      else if (input$sensor == "Freezer") {
+        dataset <- import_dataset("1KpIEUuMpRD8q3DDNNUeJ1BqSztl_nAzA8DWtdTHFnVY")
       }
       return(dataset)
     },
